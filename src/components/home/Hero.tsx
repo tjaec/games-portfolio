@@ -1,8 +1,14 @@
-export default function Hero() {
+type HeroProps = {
+    name: string;
+    role: string;
+}
+
+
+export default function Hero({ name, role }: HeroProps) {
   return (
     <section>
-      <h1>Hello, I'm Thomas Cameron</h1>
-      <p>Computer Games Programmer</p>
+      <h1>Hello, I'm {name}</h1>
+      <p>{role}</p>
     </section>
   );
 }
