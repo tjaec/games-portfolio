@@ -8,6 +8,7 @@ export default function Home() {
       <Hero
         name="Thomas Cameron"
         role="Computer Games Programmer"
+        description="I build gameplay systems, tools and interactive experiences with C++, Unreal Engine and modern software development practices."
       />
     </main>
   );
