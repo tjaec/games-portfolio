@@ -5,6 +5,7 @@ import { projects } from "@/data/projects";
 import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectSection from "@/components/projects/ProjectSection";
 import TechnologyList  from "@/components/projects/TechnologyList";
+import ProjectContent from "@/components/projects/ProjectContent";
 
 interface ProjectPageProps {
     params: Promise<{
@@ -26,7 +27,7 @@ export default async function ProjectPage({
     }
 
     return (
-        <main className="mx-auto w-full max-w-5xl px-6 py-16">
+        <main className="mx-auto w-full max-w-5xl px-6 py-24">
             <Link
                 href="/#projects"
                 className="mb-12 inline-block text-sm font-medium text-foreground/60 transtition-colors hover:text-accent"
@@ -40,6 +41,15 @@ export default async function ProjectPage({
                 <ProjectSection title="Overview">
                     <p>{project.overview}</p>
                 </ProjectSection>
+
+                {project.sections.map((section) => (
+                    <ProjectSection
+                        key={section.title}
+                        title={section.title}
+                    >
+                        <ProjectContent content={section.content} />
+                    </ProjectSection>
+                ))}
 
                 <ProjectSection title="Technologies">
                     <TechnologyList technologies={project.technologies} />

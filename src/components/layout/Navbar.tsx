@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
     return (
@@ -13,26 +14,30 @@ export default function Navbar() {
                 </Link>
 
                 <div className="flex items-center gap-8">
-                    <Link
-                        href="#projects"
-                        className="text-sm font-medium text-foreground/70 transition-colors hover:text-accent"
-                    >
-                        Projects
-                    </Link>
-                    
-                    <Link
-                        href="#about"
-                        className="text-sm font-medium text-foreground/70 transition-colors hover:text-accent"
-                    >
-                        About
-                    </Link>
-                    
-                    <Link
-                        href="#contact"
-                        className="text-sm font-medium text-foreground/70 transition-colors hover:text-accent"
-                    >
-                        Contact
-                    </Link>
+                    <div className="hidden items-center gap-8 md:flex">
+                        <Link
+                            href="/#projects"
+                            className="text-sm font-medium text-foreground/70 transition-colors hover:text-accent"
+                        >
+                            Projects
+                        </Link>
+                        
+                        <Link
+                            href="/#about"
+                            className="text-sm font-medium text-foreground/70 transition-colors hover:text-accent"
+                        >
+                            About
+                        </Link>
+                        
+                        <Link
+                            href="/#contact"
+                            className="text-sm font-medium text-foreground/70 transition-colors hover:text-accent"
+                        >
+                            Contact
+                        </Link>
+                    </div>
+
+                    <MobileMenu />
 
                     <ThemeToggle />
                 </div>

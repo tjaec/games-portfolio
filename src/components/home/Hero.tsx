@@ -8,7 +8,7 @@ type HeroProps = {
 export default function Hero({ name, role, description }: HeroProps) {
   return (
     <section className="flex min-h-screen items-center px-6 pt-20">
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="mx-auto w-full max-w-7xl">
         <p className="mb-4 font-mono text-sm font-medium uppercase tracking-widest text-accent">
           {role}
         </p>

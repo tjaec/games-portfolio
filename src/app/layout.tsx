@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import ThemeProvider from "@/components/layout/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Thomas Cameron | Games Programmer",
-  description: "Portfolio of Thomas Cameron, a computer games programmer specialising in C++, Unreal Engine and game development.",
+  title: "Thomas Cameron | Computer Games Programmer",
+  description: "Portfolio of Thomas Cameron, a Computer Games Programmer specialising in gameplay systems, C++, Unreal Engine and interactive software development.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -22,9 +25,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
+      // suppressHydrationWarning
     >
-      <head>
+      {/* <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -38,8 +41,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             `,
           }}
         />
-      </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      </head> */}
+      <body className="min-h-full flex flex-col">
+          <ThemeProvider />
+          <Navbar />
+          {children}
+          <Footer />
+      </body>
     </html>
   );
 }

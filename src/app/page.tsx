@@ -1,11 +1,12 @@
 import Hero from "@/components/home/Hero";
-import Navbar from "@/components/layout/Navbar"
+//import Navbar from "@/components/layout/Navbar"
 import ProjectGrid from "@/components/projects/ProjectGrid";
+import About from "@/components/home/About"
+import Contact from "@/components/home/Contact";
 
 export default function Home() {
   return (
     <main>
-      <Navbar />
       <Hero
         name="Thomas Cameron"
         role="Computer Games Programmer"
@@ -31,6 +32,10 @@ export default function Home() {
 
         <ProjectGrid />
       </section>
+
+      <About />
+
+      <Contact />
     </main>
   );
 }
