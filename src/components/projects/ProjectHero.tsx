@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 interface ProjectHeroProps {
@@ -24,7 +24,7 @@ export default function ProjectHero({
                 </p>
             </section>
 
-            <div className="relative mb-16 aspect-video overflow-hidden rounded-2xl border border-border">
+            {/* <div className="relative mb-16 aspect-video overflow-hidden rounded-2xl border border-border">
                 <Image
                     src={project.image}
                     alt={`${project.title} screenshot`}
@@ -32,7 +32,7 @@ export default function ProjectHero({
                     className="object-cover"
                     priority
                 />
-            </div>
+            </div> */}
         </header>
     );
 }

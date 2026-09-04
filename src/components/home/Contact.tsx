@@ -2,9 +2,9 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="mx-auto w-full max-w-6xl px-6 py-24"
+            className="mx-auto w-full max-w-350 px-6 py-24"
         >
-            <div className="rounded-3xl border border-border bg-foreground/[0.03] p-8 md:p-12">
+            <div className="rounded-3xl border border-border bg-foreground/3 p-8 md:p-12">
                 <p className="mb-3 text-sm font-medium uppercase tracking-widest text-accent">
                     Contact
                 </p>
