@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+// import type { ReactNode } from "react";
 
 export interface Project {
     title: string;
@@ -15,7 +15,7 @@ export interface Project {
 
 export interface ProjectSection {
     title: string;
-    content: ReactNode;//ProjectContent[];
+    content: ProjectContent[];
 }
 
 export interface ProjectContent {
@@ -38,7 +38,63 @@ export const projects: Project[] = [
         technologies: ["C++", "Unreal Engine 5"],
         category: "Gameplay Programming",
         image: "/projects/building-system.png",
-        media: [],
+        media: [
+            {
+                type: "image",
+                src: "/projects/building-system.png",
+                alt: "Building System Hero Image"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/house.png",
+                alt: "Stone brick house"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/brick-building.png",
+                alt: "Brick Building"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/brick-wall.png",
+                alt: "Brick Wall"
+            },
+            // {
+            //     type: "image",
+            //     src: "/projects/building-system/cube.png",
+            //     alt: "Cube of brick objects"
+            // },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-single.png",
+                alt: "Single ghost object"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-wall.png",
+                alt: "Wall of ghost objects"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-floor.png",
+                alt: "Horizontal plane of ghost objects"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-cube.png",
+                alt: "Cube of ghost objects"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/snap-corner.png",
+                alt: "Corner snapping"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/snapping-points.png",
+                alt: "Snapping points"
+            },
+        ],
         overview: "A modular survival-game building system developed in Unreal Engine 5 and C++ as part of my final-year university project. The system explores how creative freedom and realistic construction mechanics could be combined without sacrificing usability. It allows players to place, rotate and connect building pieces within a survival game environment.",
         sections: [
             {
@@ -328,7 +384,33 @@ export const projects: Project[] = [
         technologies: ["Unity", "C#", "Maths"],
         category: "Mathematical Simulation",
         image: "/projects/solar-system.png",
-        media: [],
+        media: [
+            {
+                type: "image",
+                src: "/projects/solar-system.png",
+                alt: "Solar System Hero Image"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/earth.png",
+                alt: "Earth"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/jupiter.png",
+                alt: "Jupiter"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/jupiter-top.png",
+                alt: "Jupiter"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/dwarf-planets.png",
+                alt: "Dwarf Planets"
+            },
+        ],
         overview: "...",
         sections: [
             {
@@ -367,7 +449,28 @@ export const projects: Project[] = [
         technologies: ["Unreal Engine", "C++", "Physics"],
         category: "Physics Simulation",
         image: "/projects/car-physics-v2.png",
-        media: [],
+        media: [
+            {
+                type: "image",
+                src: "/projects/car-physics-v2.png",
+                alt: "Car Physics Hero Image"
+            },
+            {
+                type: "image",
+                src: "/projects/car-physics/car-physics-suspension.png",
+                alt: "Car Physics Suspension"
+            },
+            {
+                type: "image",
+                src: "/projects/car-physics/car-physics-suspension-2.png",
+                alt: "Car Physics Suspension"
+            },
+            {
+                type: "video",
+                src: "/projects/car-physics/car-physics-video.mp4",
+                alt: "Car Physics Video"
+            },
+        ],
         overview: "...",
         sections: [
             {
