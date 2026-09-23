@@ -10,11 +10,15 @@ export default function Contact() {
                 </p>
 
                 <h2 className="text-4xl font-semibold tracking-tight">
-                    Let&apos;s work together.
+                    Get in touch!
+                    {/* Let&apos;s work together. */}
                 </h2>
 
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
-                    Placeholder content. This will become the main contact call-to-action for recruiters, studios and potential collaborators.
+                    First Name
+                    Last Name
+                    Email
+                    Content
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">

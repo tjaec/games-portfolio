@@ -28,7 +28,7 @@ export default async function ProjectPage({
     }
 
     return (
-        <main className="mx-auto w-full max-w-350 py-30">
+        <main className="mx-auto w-full max-w-350 px-6 py-30">
             <Link
                 href="/#projects"
                 className="mb-12 inline-block text-sm font-medium text-foreground/60 transtition-colors hover:text-accent"
@@ -40,10 +40,10 @@ export default async function ProjectPage({
 
             <div className="grid gap-12 lg:grid-cols-2">
                 <div>
-                    <div className="mt-16">
-                        <ProjectSection title="Overview">
+                    <div className="mt-1">
+                        {/* <ProjectSection title="Overview">
                             <p>{project.overview}</p>
-                        </ProjectSection>
+                        </ProjectSection> */}
 
                         {project.sections.map((section) => (
                             <ProjectSection
