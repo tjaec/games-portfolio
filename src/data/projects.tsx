@@ -1,0 +1,1010 @@
+// import type { ReactNode } from "react";
+
+import type { ReactNode } from "react";
+
+export interface Project {
+    title: string;
+    slug: string;
+    description: string;
+    technologies: string[];
+    category: string;
+    image: string;
+    media: ProjectMedia[];
+    // overview: string;
+    sections: ProjectSection[];
+    github?: string;
+}
+
+export interface ProjectSection {
+    title: string;
+    content: ReactNode;
+}
+
+// export interface ProjectContent {
+//     type: "paragraph" | "image";
+//     content: string;
+//     alt?: string;
+// }
+
+export interface ProjectMedia {
+    type: "image" | "video";
+    src: string;
+    alt?: string;
+}
+
+export const projects: Project[] = [
+    { // Survival Building
+        title: "Survival Building System",
+        slug: "survival-building",
+        description: "A modular survival building system developed in Unreal Engine using C++.",
+        // description: "A modular survival-game building system developed in Unreal Engine 5 and C++ as part of my final-year university project. The system explores how creative freedom and realistic construction mechanics could be combined without sacrificing usability. It allows players to place, rotate and connect building pieces within a survival game environment.",
+        technologies: ["C++", "Unreal Engine 5"],
+        category: "Gameplay Programming",
+        image: "/projects/building-system.png",
+        media: [
+            {
+                type: "image",
+                src: "/projects/building-system.png",
+                alt: "Building System Hero Image"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/house.png",
+                alt: "Stone brick house"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/brick-building.png",
+                alt: "Brick Building"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/brick-wall.png",
+                alt: "Brick Wall"
+            },
+            // {
+            //     type: "image",
+            //     src: "/projects/building-system/cube.png",
+            //     alt: "Cube of brick objects"
+            // },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-single.png",
+                alt: "Single ghost object"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-wall.png",
+                alt: "Wall of ghost objects"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-floor.png",
+                alt: "Horizontal plane of ghost objects"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/ghost-cube.png",
+                alt: "Cube of ghost objects"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/snap-corner.png",
+                alt: "Corner snapping"
+            },
+            {
+                type: "image",
+                src: "/projects/building-system/snapping-points.png",
+                alt: "Snapping points"
+            },
+        ],
+        // overview: "A modular survival-game building system developed in Unreal Engine 5 and C++ as part of my final-year university project. The system explores how creative freedom and realistic construction mechanics could be combined without sacrificing usability. It allows players to place, rotate and connect building pieces within a survival game environment.",
+        sections: [
+            {
+                title: "Key Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Line trace based building object placement
+                            </li>
+
+                            <li>
+                                <strong>Ghost preview actors</strong> to aid in placement of objects
+                            </li>
+
+                            <li>
+                                Multiple <strong>different placement types</strong>: Single, Drag, Box
+                            </li>
+
+                            <li>
+                                <strong>Drag mode</strong> creates a vertical or horizontal plane of objects, useful for building walls and floors
+                            </li>
+
+                            <li>
+                                <strong>Box mode</strong> creates a hollow cube of objects, useful for making quick rooms and buildings
+                            </li>
+
+                            <li>
+                                Dynamic object snapping using <strong>snapping point components</strong> with toggles for corner, edge and face snapping for precise control
+                            </li>
+
+                            <li>
+                                <strong>Object rotation</strong> allows for placement at multiple different angles
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Line trace based building object placement",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Ghost preview actors to aid in placement of objects",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Multiple different placement types: Single, Drag, Box",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Drag mode creates a vertical or horizontal plane of objects, useful for building walls and floors",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Box mode creates a hollow cube of objects, useful for making quick rooms and buildings",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Dynamic object snapping using snapping point components with toggles for corner, edge and face snapping for precise control",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Object rotation allows for placement at multiple different angles",
+                //     },
+                //     // {
+                //     //     type: "paragraph",
+                //     //     content: "// This allowed new building pieces and construction modes to be added without modifying the core building system, improving maintainability and scalability.",
+                //     // },
+                // ]
+            },
+            {
+                title: "Drawbacks",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Objects represented by entire actors, causing frame rate issues with large construction operations
+                            </li>
+
+                            <li>
+                                Snap points become extremely dense when object size is reduced, causing issues with precise control
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Objects represented by entire actors, causing frame rate issues with large construction operations",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Snap points become extremely dense when object size is reduced, causing issues with precise control",
+                //     },
+                // ]
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Use instanced static meshes for objects to reduce actor overhead
+                            </li>
+
+                            <li>
+                                Introduce more configurable snap layouts or rules to help with smaller objects
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Use instanced static meshes for objects to reduce actor overhead",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Introduce more configurable snap layouts or rules to help with smaller objects",
+                //     },
+                // ]
+            },
+            // {
+            //     title: "Placement & Preview System",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "Building placement is driven by a camera-based line trace which determines where the player is aiming. A ghost version of the selected object is displayed at the resulting position, allowing players to preview construction before committing to it.",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "The preview object uses a dedicated material and disabled collision before placement. Once confirmed, the building realiser converts the preview into a physical object with its normal material and collision enabled.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Multiple Construction Modes",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "The system supports two construction modes designed for different building workflows. Drag Mode provides precise individual placement as well as rapid construction across planes, while Box Mode allows larger three-dimensional structures to be created by defining their dimensions.",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "Building modes are responsible for determining object transforms, while a separate Build Realiser handles spawning and deletion. This keeps responsibilities isolated and allows additional construction modes to be introduced without modifying the core spawning system.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Dynamic Object Snapping",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "To support both precise construction and creative offset placement, each building object contains configurable snap points positioned around its corners, edges and faces.",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "When a player moves an object near an existing structure, the snap manager searches for nearby points and scores potential matches based on distance, snap type and camera alignment. The highest-scoring valid point is then used to calculate the final transform of the preview object.",
+            //         },
+            //         {
+            //             type: "image",
+            //             content: "/projects/building-system-snapping-1.png",
+            //             alt: "Survival Building System Snapping Screenshot",
+            //         },                 
+            //     ]
+            // },
+            // {
+            //     title: "Perfomance Optimisation",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "Large construction operations initially caused significant performance issues because ghost preview actors were being repeatedly spawned and destroyed during interaction.",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "I changed the system to retain existing preview objects and only create or remove previews when the construction area changed. This significantly reduced unnecessary spawning and improved performance.",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "Very large construction operations still exposed scalability limitations, highlighting the need for a more efficient representation such as instanced static meshes.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "User Testing",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "Testing suggested that the system was accessible to users with different levels of experience and supported creative construction. Participants successfully completed the test scenarios, although feedback highlighted issues with vertical/horizontal drag controls, snap precision and limited object variety.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Challenges & Lessons Learned",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "Performance:",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "Large construction operations can still cause frame-rate drops because each building piece is represented by a full actor.",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "Snapping Precision:",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "The fixed number of snap points means they become increasingly dense on smaller objects, making precise placement more difficult.",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "Improvements:",
+            //         },
+            //         {
+            //             type: "paragraph",
+            //             content: "A future version would use instanced static meshes to reduce actor overhead and would introduce more configurable snap-point layouts for smaller objects.",
+            //         },
+            //     ]
+            // },
+        ]
+    },
+    { // TBT Game
+        title: "Turn-Based Tactics Game",
+        slug: "turn-based-tactics",
+        description: "A turn-based tactics game developed in Unreal Engine using c++.",
+        technologies: ["C++", "Unreal Engine 5"],
+        category: "Gameplay Programming",
+        image: "/projects/tbt-game.png",
+        media: [
+            {
+                type: "image",
+                src: "/projects/turn-based-tactics/turn-based-tactics-objectives.png",
+                alt: "Turn Based Tactics Objectives UI"
+            },
+            {
+                type: "video",
+                src: "/projects/turn-based-tactics/turn-based-tactics-video.mp4",
+                alt: "Turn Based Tactics Showcase Video"
+            },
+        ],
+        // overview: "...",
+        sections: [
+            {
+                title: "Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                <strong>Grid-based</strong> game world for discrete movement
+                            </li>
+                            
+                            <li>
+                                All actions are based on an <strong>Action class</strong>, including moving and shooting, which can be switched between
+                            </li>
+                            
+                            <li>
+                                Movement uses <strong>A* Pathfinding</strong> to choose the best path to the selected grid tile
+                            </li>
+                            
+                            <li>
+                                <strong>Enemy AI</strong> use a <strong>utility-based decision system</strong> to evaluate best options including potential kills, weapon range and cover
+                            </li>
+                            
+                            <li>
+                                <strong>Mission and Objective System</strong> provides the player with primary and secondary objectives to complete for XP rewards
+                            </li>
+                            
+                            <li>
+                                Missions introduce mechanics gradually with <strong>tutorial pop-ups</strong> explaining new features
+                            </li>
+                        </ul>
+
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- **Grid-based** game world for discrete movement",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- All actions are based on an Action class, including moving and shooting, which can be switched between",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Movement uses **A* Pathfinding** to choose the best path to the selected grid tile",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- **Enemy AI** use a **utility-based decision system** to evaluate best options including potential kills, weapon range and cover",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- **Mission and Objective System** provides the player with primary and secondary objectives to complete for XP rewards",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Missions introduce mechanics gradually with **tutorial pop-ups** explaining new features",
+                //     },
+                // ]
+            },
+            {
+                title: "Drawbacks",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Some issues with the cover system not always applying a reduction to hit percentage
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Some issues with the cover system not always applying a reduction to hit percentage",
+                //     },
+                // ]
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Additional actions, such as grenades
+                            </li>
+
+                            <li>
+                                UI elements showing hit percentage and damage taken
+                            </li>
+
+                            <li>
+                                More complex cover and flanking code to fix issues
+                            </li>
+
+                            <li>
+                                Adding various height levels to the maps, switching the grid from 2d to 3d
+                            </li>
+
+                            <li>
+                                Visual improvements to better show what is happening, such as particles, sounds effects, animations and additional UI elements
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Additional actions, such as grenades",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- UI elements showing hit percentage and damage taken",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- More complex cover and flanking code to fix issues",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Adding various height levels to the maps, switching the grid from 2d to 3d",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Visual improvements to better show what is happening, such as particles, sounds effects, animations and additional UI elements",
+                //     },
+                // ]
+            },
+            // {
+            //     title: "Grid-Based Game World",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "The game world is represented as a discrete graph rather than relying directly on continuous world-space movement. Each tile stores information about its position, neighbouring tiles, occupants and traversal cost. This provides a predictable representation of the game state that can be queried by both player and AI systems.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "A* Pathfinding",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "I implemented A* pathfinding over the game's weighted grid graph. Movement costs are assigned to grid connections, allowing paths to account for different traversal costs while naturally supporting character movement ranges. The grid-based approach also makes movement deterministic, which is important for a tactics game where players need to understand and plan around the possible actions of both teams.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Utility-Based Enemy AI",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "Enemy behaviour is driven by a utility-based decision system. At the beginning of each turn, the AI evaluates possible actions and assigns each a score based on factors such as potential kills, weapon effectiveness, range and cover. The AI then selects the highest-scoring action, allowing behaviour to emerge from the current game state rather than relying on a fixed sequence of behaviours.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Challenges & Lessons Learned",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "The utility system proved flexible but difficult to tune. Small changes to weapon ranges, cover penalties and scoring weights could significantly change AI behaviour. The final implementation evaluates actions within the current turn rather than planning several turns ahead, leaving clear opportunities for future improvement.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Project Evolution",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "The original prototype focused on the core tactical systems. I later continued development of the project, expanding it into a sequence of scenarios designed to progressively introduce mechanics and provide a more complete player experience.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Mission & Objective System",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "I expanded the game with primary and optional objectives, allowing missions to provide both a core completion condition and additional challenges. A mission-complete screen communicates completed objectives and associated rewards.",
+            //         },
+            //     ]
+            // },
+            // {
+            //     title: "Player Onboarding",
+            //     content: [
+            //         {
+            //             type: "paragraph",
+            //             content: "The project was expanded with a gradual introduction of mechanics, replacing the original debug-driven presentation with dedicated UI and scenario-based progression.",
+            //         },
+            //     ]
+            // },
+        ]
+    },
+    { // Naval VR
+        title: "Naval VR Simulator",
+        slug: "naval-vr",
+        description: "A virtual reality naval simulator developed as part of a university group project for a real client..",
+        technologies: ["Unity", "C#", "VR", "Physics"],
+        category: "Virtual Reality",
+        image: "/projects/naval-vr.png",
+        media: [
+            {
+                type: "image",
+                src: "/projects/naval-vr.png",
+                alt: "Ship Exterior Hero"
+            },
+            {
+                type: "image",
+                src: "/projects/naval-vr/naval-vr-interior-1.png",
+                alt: "Ship Interior Angled"
+            },
+            {
+                type: "image",
+                src: "/projects/naval-vr/naval-vr-interior-2.png",
+                alt: "Ship Interior Front"
+            },
+            {
+                type: "image",
+                src: "/projects/naval-vr/naval-vr-early-physics.png",
+                alt: "Early Ship Physics"
+            },
+            {
+                type: "image",
+                src: "/projects/naval-vr/naval-vr-interior-heeling.png",
+                alt: "Ship Interior Heeling"
+            },
+            {
+                type: "image",
+                src: "/projects/naval-vr/naval-vr-development-heeling.png",
+                alt: "Ship Heeling Development"
+            },
+            {
+                type: "image",
+                src: "/projects/naval-vr/naval-vr-exterior-sun.png",
+                alt: "Ship Exterior Sun"
+            },
+            {
+                type: "image",
+                src: "/projects/naval-vr/naval-vr-exterior-night.png",
+                alt: "Ship Exterior at Night"
+            },
+        ],
+        // overview: "...",
+        sections: [
+            {
+                title: "Overall Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                <strong>VR training simulation</strong> for a naval ship controlled by HOTAS and joystick
+                            </li>
+
+                            <li>
+                                Includes the ability for the trainer to set the conditions of the environment and also set off error alerts for the trainee to correct
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- VR training simulation for a naval ship controlled by HOTAS and joystick",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Includes the ability for the trainer to set the conditions of the environment and also set off error alerts for the trainee to correct",
+                //     },
+                // ]
+            },
+            {
+                title: "My Contributions",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                <strong>Line-trace based</strong> physics system, inspired by the previous car physics simulation I created
+                            </li>
+
+                            <li>
+                                Turning modified to work with a ship on water and used multiple turning points to create a more realistic look
+                            </li>
+                            
+                            <li>
+                                Throttle split into two separate <strong>port and starboard throttles</strong>
+                            </li>
+
+                            <li>
+                                Heeling implemented to make the ship tip over under turning
+                            </li>
+
+                            <li>
+                                <strong>HOTAS and throttle</strong> connected to the project using the <strong>Rewired</strong> plugin to get it to work correctly
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Line-trace based physics system, inspired by the previous car physics simulation I created",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Turning modified to work with a ship on water and used multiple turning points to create a more realistic look",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Throttle split into two separate port and starboard throttles",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Heeling implemented to make the ship tip over under turning",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- HOTAS and throttle connected to the project using the Rewired plugin to get it to work correctly",
+                //     },
+                // ]
+            },
+            {
+                title: "Drawbacks",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Heeling only turns outwards as having it turn inward initially was causing some strange issues
+                            </li>
+
+                            <li>
+                                Line trace physics are not as realistic as a proper water buoyancy simulation but are simpler than true simulation for maintaining frame rate in VR
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Heeling only turns outwards as having it turn inward initially was causing some strange issues",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Line trace physics are not as realistic as a proper water buoyancy simulation but are simpler than true simulation for maintaining frame rate in VR",
+                //     },
+                // ]
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Ship drift that takes the ship slightly off course when turning
+                            </li>
+
+                            <li>
+                                Proper heeling that turns inwards initially and then outwards after a short time
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Ship drift that takes the ship slightly off course when turning",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Proper heeling that turns inwards initially and then outwards after a short time",
+                //     },
+                // ]
+            },
+        ]
+    },
+    { // Solar System
+        title: "Solar System Orrery",
+        slug: "solar-system",
+        description: "A simulated orrery of the solar system made using complex maths techniques.",
+        technologies: ["Unity", "C#", "Maths"],
+        category: "Mathematical Simulation",
+        image: "/projects/solar-system.png",
+        media: [
+            {
+                type: "image",
+                src: "/projects/solar-system.png",
+                alt: "Solar System Hero Image"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/earth.png",
+                alt: "Earth"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/jupiter.png",
+                alt: "Jupiter"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/jupiter-top.png",
+                alt: "Jupiter"
+            },
+            {
+                type: "image",
+                src: "/projects/solar-system/dwarf-planets.png",
+                alt: "Dwarf Planets"
+            },
+        ],
+        // overview: "...",
+        sections: [
+            {
+                title: "Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Transformations and rotations completed using <strong>matrix multiplication</strong> on individual mesh vertices
+                            </li>
+
+                            <li>
+                                <strong>Modular architecture</strong> allowing for infinitely customizable solar systems supporting iterative moons and sub-moons, which follow their parent body
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Transformations and rotations completed using matrix multiplication on individual mesh vertices",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Modular architecture allowing for infinitely customizable solar systems supporting iterative moons and sub-moons, which follow their parent body",
+                //     },
+                // ]
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                More complex orbital physics such as elliptical orbits and inclination
+                            </li>
+
+                            <li>
+                                More advanced camera control
+                            </li>
+
+                            <li>
+                                Realtime time multiplier adjustment
+                            </li>
+
+                            <li>
+                                Planet selection/focus and information
+                            </li>
+
+                            <li>
+                                Visual improvements such as planetary rings, higher definition models and animated textures
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- More complex orbital physics such as elliptical orbits and inclination",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- More advanced camera control",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Realtime time multiplier adjustment",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Planet selection/focus and information",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Visual improvements such as planetary rings, higher definition models and animated textures",
+                //     },
+                // ]
+            },
+        ]
+    },
+    { // Car Physics
+        title: "Car Physics Simulation",
+        slug: "car-physics",
+        description: "A physics simulation of a wheeled vehicle made using C++ in Unreal Engine.",
+        technologies: ["Unreal Engine", "C++", "Physics"],
+        category: "Physics Simulation",
+        image: "/projects/car-physics-v2.png",
+        media: [
+            {
+                type: "image",
+                src: "/projects/car-physics-v2.png",
+                alt: "Car Physics Hero Image"
+            },
+            {
+                type: "image",
+                src: "/projects/car-physics/car-physics-suspension.png",
+                alt: "Car Physics Suspension"
+            },
+            {
+                type: "image",
+                src: "/projects/car-physics/car-physics-suspension-2.png",
+                alt: "Car Physics Suspension"
+            },
+            {
+                type: "video",
+                src: "/projects/car-physics/car-physics-video.mp4",
+                alt: "Car Physics Video"
+            },
+        ],
+        // overview: "...",
+        sections: [
+            {
+                title: "Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Uses <strong>line-trace based</strong> suspension, applying forces to balance the vehicle at the desired spring height
+                            </li>
+
+                            <li>
+                                Simulates the direction of tyres and <strong>applies forces</strong> in the direction and against the perpendicular direction of them, creating braking and turning forces
+                            </li>
+
+                            <li>
+                                Uses RPMs to simulate different gears and their acceleration
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Uses line-trace based suspension, applying forces to balance the vehicle at the desired spring height",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Simulates the direction of tyres and applies forces in the direction and against the perpendicular direction of them, creating braking and turning forces",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Uses RPMs to simulate different gears and their acceleration",
+                //     },
+                // ]
+            },
+            {
+                title: "Drawbacks",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Very simple model and therefore doesn&apos;t feel very realistic
+                            </li>
+
+                            <li>
+                                Some issues with the gears meaning that they don&apos;t work quite as intended
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Very simple model and therefore doesn't feel very realistic",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Some issues with the gears meaning that they don't work quite as intended",
+                //     },
+                // ]
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Visual vehicle body including overall frame, wheels and tyres and suspension
+                            </li>
+
+                            <li>
+                                Improved gear system and throttle response
+                            </li>
+
+                            <li>
+                                Handbrake and more complex simulations such as brake locking and traction loss
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "- Visual vehicle body including overall frame, wheels and tyres and suspension",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Improved gear system and throttle response",
+                //     },
+                //     {
+                //         type: "paragraph",
+                //         content: "- Handbrake and more complex simulations such as brake locking and traction loss",
+                //     },
+                // ]
+            },
+        ]
+    },
+    { // Website
+        title: "Portfolio Website",
+        slug: "portfolio-website",
+        description: "The website that you are looking at right now.",
+        technologies: ["Next.js", "TypeScript", "Vercel"],
+        category: "Website Creation",
+        image: "/projects/portfolio-website-v3.png",
+        media: [],
+        // overview: "...",
+        // github: "https://github.com/tjaec/games-portfolio",
+        sections: [
+            {
+                title: "Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Technical implementation details will be added tomorrow.
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "Technical implementation details will be added tomorrow.",
+                //     },
+                // ]
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Challenges and solutions will be documented tomorrow.
+                            </li>
+                        </ul>
+                    </>
+                )
+                // content: [
+                //     {
+                //         type: "paragraph",
+                //         content: "Challenges and solutions will be documented tomorrow.",
+                //     },
+                // ]
+            },
+        ]
+    },
+];

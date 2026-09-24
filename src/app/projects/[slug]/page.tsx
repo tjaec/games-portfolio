@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectSection from "@/components/projects/ProjectSection";
 import TechnologyList  from "@/components/projects/TechnologyList";
-import ProjectContent from "@/components/projects/ProjectContent";
+// import ProjectContent from "@/components/projects/ProjectContent";
 import ProjectMedia from "@/components/projects/ProjectMedia";
 
 interface ProjectPageProps {
@@ -50,7 +50,7 @@ export default async function ProjectPage({
                                 key={section.title}
                                 title={section.title}
                             >
-                                <ProjectContent content={section.content} />
+                                {section.content}
                             </ProjectSection>
                         ))}
 
