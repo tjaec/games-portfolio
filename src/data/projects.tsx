@@ -20,11 +20,11 @@ export interface ProjectSection {
     content: ReactNode;
 }
 
-// export interface ProjectContent {
-//     type: "paragraph" | "image";
-//     content: string;
-//     alt?: string;
-// }
+export interface ProjectContent {
+    type: "paragraph" | "image";
+    content: string;
+    alt?: string;
+}
 
 export interface ProjectMedia {
     type: "image" | "video";
