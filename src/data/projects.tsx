@@ -48,6 +48,16 @@ export const projects: Project[] = [
                 alt: "Building System Hero Image"
             },
             {
+                type: "video",
+                src: "/projects/building-system/building-system-overview.mp4",
+                alt: "Building System Showcase Video"
+            },
+            {
+                type: "video",
+                src: "/projects/building-system/building-system-house.mp4",
+                alt: "Building System House Video"
+            },
+            {
                 type: "image",
                 src: "/projects/building-system/house.png",
                 alt: "Stone brick house"
@@ -338,7 +348,7 @@ export const projects: Project[] = [
             },
             {
                 type: "video",
-                src: "/projects/turn-based-tactics/turn-based-tactics-video.mp4",
+                src: "/projects/turn-based-tactics/turn-based-tactics-gameplay.mp4",
                 alt: "Turn Based Tactics Showcase Video"
             },
         ],
@@ -548,6 +558,11 @@ export const projects: Project[] = [
                 type: "image",
                 src: "/projects/naval-vr.png",
                 alt: "Ship Exterior Hero"
+            },
+            {
+                type: "video",
+                src: "/projects/naval-vr/naval-vr-video.mp4",
+                alt: "Naval VR Showcase Video"
             },
             {
                 type: "image",
@@ -858,6 +873,16 @@ export const projects: Project[] = [
                 type: "video",
                 src: "/projects/car-physics/car-physics-video.mp4",
                 alt: "Car Physics Video"
+            },
+            {
+                type: "video",
+                src: "/projects/car-physics/car-physics-suspension-video.mp4",
+                alt: "Car Physics Suspension Video"
+            },
+            {
+                type: "video",
+                src: "/projects/car-physics/car-physics-driving.mp4",
+                alt: "Car Physics Driving Video"
             },
         ],
         // overview: "...",
