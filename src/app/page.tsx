@@ -10,7 +10,7 @@ export default function Home() {
       <Hero
         name="Thomas Cameron"
         role="Computer Games Programmer"
-        description="I build gameplay systems, tools and interactive experiences with C++, Unreal Engine and modern software development practices."
+        description="I build gameplay systems, physics simulations and interactive experiences with C++/C#, Unreal Engine and Unity, using modern software development practices."
       />
       <section
         id="projects"

@@ -15,10 +15,7 @@ export default function Contact() {
                 </h2>
 
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70">
-                    First Name
-                    Last Name
-                    Email
-                    Content
+
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
