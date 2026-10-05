@@ -424,12 +424,6 @@ export const projects: Project[] = [
                         </ul>
                     </>
                 )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "- Some issues with the cover system not always applying a reduction to hit percentage",
-                //     },
-                // ]
             },
             {
                 title: "Future Improvements",
@@ -458,92 +452,8 @@ export const projects: Project[] = [
                         </ul>
                     </>
                 )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "- Additional actions, such as grenades",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- UI elements showing hit percentage and damage taken",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- More complex cover and flanking code to fix issues",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Adding various height levels to the maps, switching the grid from 2d to 3d",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Visual improvements to better show what is happening, such as particles, sounds effects, animations and additional UI elements",
-                //     },
-                // ]
             },
-            // {
-            //     title: "Grid-Based Game World",
-            //     content: [
-            //         {
-            //             type: "paragraph",
-            //             content: "The game world is represented as a discrete graph rather than relying directly on continuous world-space movement. Each tile stores information about its position, neighbouring tiles, occupants and traversal cost. This provides a predictable representation of the game state that can be queried by both player and AI systems.",
-            //         },
-            //     ]
-            // },
-            // {
-            //     title: "A* Pathfinding",
-            //     content: [
-            //         {
-            //             type: "paragraph",
-            //             content: "I implemented A* pathfinding over the game's weighted grid graph. Movement costs are assigned to grid connections, allowing paths to account for different traversal costs while naturally supporting character movement ranges. The grid-based approach also makes movement deterministic, which is important for a tactics game where players need to understand and plan around the possible actions of both teams.",
-            //         },
-            //     ]
-            // },
-            // {
-            //     title: "Utility-Based Enemy AI",
-            //     content: [
-            //         {
-            //             type: "paragraph",
-            //             content: "Enemy behaviour is driven by a utility-based decision system. At the beginning of each turn, the AI evaluates possible actions and assigns each a score based on factors such as potential kills, weapon effectiveness, range and cover. The AI then selects the highest-scoring action, allowing behaviour to emerge from the current game state rather than relying on a fixed sequence of behaviours.",
-            //         },
-            //     ]
-            // },
-            // {
-            //     title: "Challenges & Lessons Learned",
-            //     content: [
-            //         {
-            //             type: "paragraph",
-            //             content: "The utility system proved flexible but difficult to tune. Small changes to weapon ranges, cover penalties and scoring weights could significantly change AI behaviour. The final implementation evaluates actions within the current turn rather than planning several turns ahead, leaving clear opportunities for future improvement.",
-            //         },
-            //     ]
-            // },
-            // {
-            //     title: "Project Evolution",
-            //     content: [
-            //         {
-            //             type: "paragraph",
-            //             content: "The original prototype focused on the core tactical systems. I later continued development of the project, expanding it into a sequence of scenarios designed to progressively introduce mechanics and provide a more complete player experience.",
-            //         },
-            //     ]
-            // },
-            // {
-            //     title: "Mission & Objective System",
-            //     content: [
-            //         {
-            //             type: "paragraph",
-            //             content: "I expanded the game with primary and optional objectives, allowing missions to provide both a core completion condition and additional challenges. A mission-complete screen communicates completed objectives and associated rewards.",
-            //         },
-            //     ]
-            // },
-            // {
-            //     title: "Player Onboarding",
-            //     content: [
-            //         {
-            //             type: "paragraph",
-            //             content: "The project was expanded with a gradual introduction of mechanics, replacing the original debug-driven presentation with dedicated UI and scenario-based progression.",
-            //         },
-            //     ]
-            // },
+
         ]
     },
     { // Naval VR
@@ -617,16 +527,6 @@ export const projects: Project[] = [
                         </ul>
                     </>
                 )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "- VR training simulation for a naval ship controlled by HOTAS and joystick",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Includes the ability for the trainer to set the conditions of the environment and also set off error alerts for the trainee to correct",
-                //     },
-                // ]
             },
             {
                 title: "My Contributions",
@@ -655,28 +555,6 @@ export const projects: Project[] = [
                         </ul>
                     </>
                 )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "- Line-trace based physics system, inspired by the previous car physics simulation I created",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Turning modified to work with a ship on water and used multiple turning points to create a more realistic look",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Throttle split into two separate port and starboard throttles",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Heeling implemented to make the ship tip over under turning",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- HOTAS and throttle connected to the project using the Rewired plugin to get it to work correctly",
-                //     },
-                // ]
             },
             {
                 title: "Drawbacks",
@@ -693,16 +571,6 @@ export const projects: Project[] = [
                         </ul>
                     </>
                 )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "- Heeling only turns outwards as having it turn inward initially was causing some strange issues",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Line trace physics are not as realistic as a proper water buoyancy simulation but are simpler than true simulation for maintaining frame rate in VR",
-                //     },
-                // ]
             },
             {
                 title: "Future Improvements",
@@ -719,16 +587,68 @@ export const projects: Project[] = [
                         </ul>
                     </>
                 )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "- Ship drift that takes the ship slightly off course when turning",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Proper heeling that turns inwards initially and then outwards after a short time",
-                //     },
-                // ]
+            },
+        ]
+    },
+    { // Solar System
+        title: "Localized Physics System",
+        slug: "localized-physics",
+        description: "A system that allows characters and physics objects to remain in place while inside fast moving containers such as vehicles.",
+        technologies: ["Unreal Engine", "C++", "Physics"],
+        category: "Physics Localization",
+        image: "/projects/localized-physics/localized-physics.png",
+        media: [
+            {
+                type: "image",
+                src: "/projects/localized-physics/localized-physics.png",
+                alt: "Localized Physics Hero Image"
+            },
+        ],
+        // overview: "...",
+        sections: [
+            {
+                title: "Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Transformations and rotations completed using <strong>matrix multiplication</strong> on individual mesh vertices
+                            </li>
+
+                            <li>
+                                <strong>Modular architecture</strong> allowing for infinitely customizable solar systems supporting iterative moons and sub-moons, which follow their parent body
+                            </li>
+                        </ul>
+                    </>
+                )
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                More complex orbital physics such as elliptical orbits and inclination
+                            </li>
+
+                            <li>
+                                More advanced camera control
+                            </li>
+
+                            <li>
+                                Realtime time multiplier adjustment
+                            </li>
+
+                            <li>
+                                Planet selection/focus and information
+                            </li>
+
+                            <li>
+                                Visual improvements such as planetary rings, higher definition models and animated textures
+                            </li>
+                        </ul>
+                    </>
+                )
             },
         ]
     },
@@ -783,16 +703,6 @@ export const projects: Project[] = [
                         </ul>
                     </>
                 )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "- Transformations and rotations completed using matrix multiplication on individual mesh vertices",
-                //     },
-                //     {
-                //         type: "paragraph",
-                //         content: "- Modular architecture allowing for infinitely customizable solar systems supporting iterative moons and sub-moons, which follow their parent body",
-                //     },
-                // ]
             },
             {
                 title: "Future Improvements",
@@ -983,53 +893,53 @@ export const projects: Project[] = [
             },
         ]
     },
-    { // Website
-        title: "Portfolio Website",
-        slug: "portfolio-website",
-        description: "The website that you are looking at right now.",
-        technologies: ["Next.js", "TypeScript", "Vercel"],
-        category: "Website Creation",
-        image: "/projects/portfolio-website-v3.png",
-        media: [],
-        // overview: "...",
-        // github: "https://github.com/tjaec/games-portfolio",
-        sections: [
-            {
-                title: "Features",
-                content: (
-                    <>
-                        <ul className="list-disc space-y-2 pl-6">
-                            <li>
-                                Technical implementation details will be added tomorrow.
-                            </li>
-                        </ul>
-                    </>
-                )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "Technical implementation details will be added tomorrow.",
-                //     },
-                // ]
-            },
-            {
-                title: "Future Improvements",
-                content: (
-                    <>
-                        <ul className="list-disc space-y-2 pl-6">
-                            <li>
-                                Challenges and solutions will be documented tomorrow.
-                            </li>
-                        </ul>
-                    </>
-                )
-                // content: [
-                //     {
-                //         type: "paragraph",
-                //         content: "Challenges and solutions will be documented tomorrow.",
-                //     },
-                // ]
-            },
-        ]
-    },
+    // { // Website
+    //     title: "Portfolio Website",
+    //     slug: "portfolio-website",
+    //     description: "The website that you are looking at right now.",
+    //     technologies: ["Next.js", "TypeScript", "Vercel"],
+    //     category: "Website Creation",
+    //     image: "/projects/portfolio-website-v3.png",
+    //     media: [],
+    //     // overview: "...",
+    //     // github: "https://github.com/tjaec/games-portfolio",
+    //     sections: [
+    //         {
+    //             title: "Features",
+    //             content: (
+    //                 <>
+    //                     <ul className="list-disc space-y-2 pl-6">
+    //                         <li>
+    //                             Technical implementation details will be added tomorrow.
+    //                         </li>
+    //                     </ul>
+    //                 </>
+    //             )
+    //             // content: [
+    //             //     {
+    //             //         type: "paragraph",
+    //             //         content: "Technical implementation details will be added tomorrow.",
+    //             //     },
+    //             // ]
+    //         },
+    //         {
+    //             title: "Future Improvements",
+    //             content: (
+    //                 <>
+    //                     <ul className="list-disc space-y-2 pl-6">
+    //                         <li>
+    //                             Challenges and solutions will be documented tomorrow.
+    //                         </li>
+    //                     </ul>
+    //                 </>
+    //             )
+    //             // content: [
+    //             //     {
+    //             //         type: "paragraph",
+    //             //         content: "Challenges and solutions will be documented tomorrow.",
+    //             //     },
+    //             // ]
+    //         },
+    //     ]
+    // },
 ];
