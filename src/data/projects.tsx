@@ -603,6 +603,11 @@ export const projects: Project[] = [
                 src: "/projects/localized-physics/localized-physics.png",
                 alt: "Localized Physics Hero Image"
             },
+            {
+                type: "image",
+                src: "/projects/localized-physics/ship-inside.png",
+                alt: "Localized Physics Inside Ship In Air"
+            },
         ],
         // overview: "...",
         sections: [
