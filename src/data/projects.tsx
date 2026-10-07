@@ -590,7 +590,7 @@ export const projects: Project[] = [
             },
         ]
     },
-    { // Solar System
+    { // Localized Physics
         title: "Localized Physics System",
         slug: "localized-physics",
         description: "A system that allows characters and physics objects to remain in place while inside fast moving containers such as vehicles.",
@@ -612,11 +612,23 @@ export const projects: Project[] = [
                     <>
                         <ul className="list-disc space-y-2 pl-6">
                             <li>
-                                Transformations and rotations completed using <strong>matrix multiplication</strong> on individual mesh vertices
+                                Uses <strong>Physics Containers</strong> to hold characters and physics actors
                             </li>
 
                             <li>
-                                <strong>Modular architecture</strong> allowing for infinitely customizable solar systems supporting iterative moons and sub-moons, which follow their parent body
+                                When in a Physics Container, actors are teleported to the same space in an identical <strong>Proxy Container</strong>
+                            </li>
+
+                            <li>
+                                Visual parts of the actors, such as cameras and meshes are then sent back to a <strong>Puppet Actor</strong> that exists on the real container
+                            </li>
+
+                            <li>
+                                When the physics container move or rotate, the objects inside stay perfectly still and can walk about freely
+                            </li>
+
+                            <li>
+                                <strong>Custom Gravity</strong> allows characters and objects to reorient to rotated physics containers
                             </li>
                         </ul>
                     </>
@@ -628,23 +640,7 @@ export const projects: Project[] = [
                     <>
                         <ul className="list-disc space-y-2 pl-6">
                             <li>
-                                More complex orbital physics such as elliptical orbits and inclination
-                            </li>
-
-                            <li>
-                                More advanced camera control
-                            </li>
-
-                            <li>
-                                Realtime time multiplier adjustment
-                            </li>
-
-                            <li>
-                                Planet selection/focus and information
-                            </li>
-
-                            <li>
-                                Visual improvements such as planetary rings, higher definition models and animated textures
+                                Multiplayer Replication
                             </li>
                         </ul>
                     </>
