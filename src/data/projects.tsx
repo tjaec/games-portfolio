@@ -901,7 +901,23 @@ export const projects: Project[] = [
         technologies: ["Next.js", "TypeScript", "Vercel"],
         category: "Website Creation",
         image: "/projects/portfolio-website-v3.png",
-        media: [],
+        media: [
+            {
+                type: "image",
+                src: "/projects/portfolio-website-v3.png",
+                alt: "Portfolio Website Hero Image"
+            },
+            {
+                type: "image",
+                src: "/projects/portfolio-website/project-grid.png",
+                alt: "Portfolio Website Project Grid"
+            },
+            {
+                type: "image",
+                src: "/projects/portfolio-website/naval-project.png",
+                alt: "Portfolio Website Naval VR Project"
+            },
+        ],
         // overview: "...",
         // github: "https://github.com/tjaec/games-portfolio",
         sections: [
