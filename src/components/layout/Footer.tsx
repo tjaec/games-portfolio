@@ -22,12 +22,12 @@ export default function Footer() {
                         LinkedIn
                     </a>
 
-                    <a
+                    {/* <a
                         href="#"
                         className="transition-colors hover:text-accent"
                     >
                         CV
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </footer>
