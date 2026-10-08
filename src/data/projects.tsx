@@ -604,6 +604,21 @@ export const projects: Project[] = [
                 alt: "Localized Physics Hero Image"
             },
             {
+                type: "video",
+                src: "/projects/localized-physics/localized-physics-overview-low.mp4",
+                alt: "Localized Physics Overview Video"
+            },
+            {
+                type: "video",
+                src: "/projects/localized-physics/localized-physics-nesting-low.mp4",
+                alt: "Localized Physics Nesting Video"
+            },
+            {
+                type: "video",
+                src: "/projects/localized-physics/localized-physics-planetary-low.mp4",
+                alt: "Localized Physics Planetary Gravity Video"
+            },
+            {
                 type: "image",
                 src: "/projects/localized-physics/ship-inside.png",
                 alt: "Localized Physics Inside Ship In Air"
