@@ -894,53 +894,57 @@ export const projects: Project[] = [
             },
         ]
     },
-    // { // Website
-    //     title: "Portfolio Website",
-    //     slug: "portfolio-website",
-    //     description: "The website that you are looking at right now.",
-    //     technologies: ["Next.js", "TypeScript", "Vercel"],
-    //     category: "Website Creation",
-    //     image: "/projects/portfolio-website-v3.png",
-    //     media: [],
-    //     // overview: "...",
-    //     // github: "https://github.com/tjaec/games-portfolio",
-    //     sections: [
-    //         {
-    //             title: "Features",
-    //             content: (
-    //                 <>
-    //                     <ul className="list-disc space-y-2 pl-6">
-    //                         <li>
-    //                             Technical implementation details will be added tomorrow.
-    //                         </li>
-    //                     </ul>
-    //                 </>
-    //             )
-    //             // content: [
-    //             //     {
-    //             //         type: "paragraph",
-    //             //         content: "Technical implementation details will be added tomorrow.",
-    //             //     },
-    //             // ]
-    //         },
-    //         {
-    //             title: "Future Improvements",
-    //             content: (
-    //                 <>
-    //                     <ul className="list-disc space-y-2 pl-6">
-    //                         <li>
-    //                             Challenges and solutions will be documented tomorrow.
-    //                         </li>
-    //                     </ul>
-    //                 </>
-    //             )
-    //             // content: [
-    //             //     {
-    //             //         type: "paragraph",
-    //             //         content: "Challenges and solutions will be documented tomorrow.",
-    //             //     },
-    //             // ]
-    //         },
-    //     ]
-    // },
+    { // Website
+        title: "Portfolio Website",
+        slug: "portfolio-website",
+        description: "The website that you are looking at right now.",
+        technologies: ["Next.js", "TypeScript", "Vercel"],
+        category: "Website Creation",
+        image: "/projects/portfolio-website-v3.png",
+        media: [],
+        // overview: "...",
+        // github: "https://github.com/tjaec/games-portfolio",
+        sections: [
+            {
+                title: "Features",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Modern website with <strong>responsive</strong> layout
+                            </li>
+
+                            <li>
+                                Hero page includes a background <strong>Demo Reel</strong> of my projects
+                            </li>
+
+                            <li>
+                                A <strong>Project Grid</strong> displays all of my projects in an easily readable fashion
+                            </li>
+
+                            <li>
+                                Project pages include notes and an <strong>interactive carousel</strong> for images and videos with fullscreen capabilities
+                            </li>
+
+                            <li>
+                                Light/Dark mode toggle
+                            </li>
+                        </ul>
+                    </>
+                )
+            },
+            {
+                title: "Future Improvements",
+                content: (
+                    <>
+                        <ul className="list-disc space-y-2 pl-6">
+                            <li>
+                                Image & Video Optimization
+                            </li>
+                        </ul>
+                    </>
+                )
+            },
+        ]
+    },
 ];
